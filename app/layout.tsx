@@ -11,9 +11,9 @@ const fontSans = FontSans({
 })
 
 export const metadata: Metadata = {
-  title: "Miguel Garza | Portafolio",
-  description: "Portafolio profesional de Miguel Garza - Desarrollador Web",
-    generator: 'v0.app'
+  title: "Miguel Garza | Portfolio",
+  description: "Professional portfolio of Miguel Garza — Web Developer",
+  generator: "v0.app",
 }
 
 export default function RootLayout({
@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body className={cn("min-h-screen bg-background font-sans antialiased", fontSans.variable)}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           {children}

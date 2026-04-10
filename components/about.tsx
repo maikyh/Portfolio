@@ -12,33 +12,33 @@ export function About() {
   const features = [
     {
       icon: <Code className="h-10 w-10 text-primary" />,
-      title: "Desarrollo Web",
-      description: "Especializado en crear aplicaciones web modernas y responsivas utilizando las últimas tecnologías.",
+      title: "Web development",
+      description: "Building modern, responsive web applications with up-to-date tooling and best practices.",
     },
     {
       icon: <Lightbulb className="h-10 w-10 text-primary" />,
-      title: "Solución de Problemas",
-      description: "Enfoque analítico para resolver problemas complejos y crear soluciones eficientes.",
+      title: "Problem solving",
+      description: "Analytical approach to complex problems and pragmatic, efficient solutions.",
     },
     {
       icon: <Users className="h-10 w-10 text-primary" />,
-      title: "Trabajo en Equipo",
-      description: "Experiencia colaborando en equipos multidisciplinarios para lograr objetivos comunes.",
+      title: "Teamwork",
+      description: "Collaborating in cross-functional teams to ship features and hit shared goals.",
     },
     {
       icon: <BookOpen className="h-10 w-10 text-primary" />,
-      title: "Aprendizaje Continuo",
-      description: "Constantemente actualizándome con las nuevas tecnologías y mejores prácticas.",
+      title: "Continuous learning",
+      description: "Staying current with new technologies, patterns, and industry practices.",
     },
     {
       icon: <Rocket className="h-10 w-10 text-primary" />,
-      title: "Innovación",
-      description: "Buscando siempre nuevas formas de mejorar y optimizar procesos y productos.",
+      title: "Innovation",
+      description: "Looking for ways to improve workflows, performance, and user experience.",
     },
     {
       icon: <Award className="h-10 w-10 text-primary" />,
-      title: "Calidad",
-      description: "Comprometido con entregar código limpio, mantenible y de alta calidad.",
+      title: "Quality",
+      description: "Committed to clean, maintainable code and thoughtful implementation details.",
     },
   ]
 
@@ -53,13 +53,12 @@ export function About() {
           ref={ref}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Sobre <span className="text-blue-600">Mí</span>
+            About <span className="text-blue-600">me</span>
           </h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto mb-8 rounded-full"></div>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Soy un desarrollador web apasionado con experiencia en la creación de aplicaciones web modernas y
-            responsivas. Me especializo en tecnologías frontend y backend, con un enfoque en la creación de experiencias
-            de usuario excepcionales.
+            I&apos;m a web developer focused on modern, responsive applications. I work across frontend and backend with
+            a strong interest in great user experiences.
           </p>
         </motion.div>
 

@@ -28,7 +28,7 @@ export function Footer() {
             <Link href="/" className="text-2xl font-bold text-primary">
               Miguel<span className="text-foreground"> Garza</span>
             </Link>
-            <p className="text-muted-foreground mt-2">Desarrollador Web & Ingeniero de Software</p>
+            <p className="text-muted-foreground mt-2">Web Developer & Software Engineer</p>
           </motion.div>
 
           <motion.div
@@ -46,7 +46,7 @@ export function Footer() {
               <ArrowUp className="h-5 w-5" />
             </Button>
             <p className="text-muted-foreground text-sm">
-              © {currentYear} Miguel Garza. Todos los derechos reservados.
+              © {currentYear} Miguel Garza. All rights reserved.
             </p>
           </motion.div>
         </div>

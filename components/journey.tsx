@@ -12,81 +12,65 @@ export function Journey() {
   const education = [
     {
       id: 1,
-      degree: "Ingeniería en Sistemas Computacionales",
+      degree: "B.S. Computer Systems Engineering",
       institution: "Instituto Tecnológico de Laguna",
       location: "Torreón, Coahuila",
       period: "2018 - 2022",
-      description: "Especialización en desarrollo de software y sistemas de información.",
-      image: "/static/media/itlaglogo.0bb41928f3e017d997bc.jpeg",
-    },
-    {
-      id: 2,
-      degree: "Bachillerato Técnico en Informática",
-      institution: "CBTIS 4",
-      location: "Torreón, Coahuila",
-      period: "2015 - 2018",
-      description: "Formación técnica en programación, redes y mantenimiento de equipos de cómputo.",
-      image: "/static/media/secundaria.7abf86c4aa8e398d5a8c.jpeg",
+      description: "Focus on software development and information systems.",
     },
   ]
 
   const experience = [
     {
       id: 1,
-      position: "Desarrollador Web Full Stack",
-      company: "Empresa Tecnológica",
+      position: "Full Stack Web Developer",
+      company: "Technology Company",
       location: "Torreón, Coahuila",
-      period: "2022 - Presente",
+      period: "2022 - Present",
       description:
-        "Desarrollo de aplicaciones web utilizando React, Node.js y bases de datos SQL y NoSQL. Implementación de APIs RESTful y arquitecturas escalables.",
-      image: "/static/media/logo.7882141ef5d9905db6fd.png",
+        "Building web applications with React, Node.js, and SQL/NoSQL databases. REST APIs and scalable architectures.",
     },
     {
       id: 2,
-      position: "Desarrollador Frontend",
-      company: "Agencia Digital",
+      position: "Frontend Developer",
+      company: "Digital Agency",
       location: "Torreón, Coahuila",
       period: "2020 - 2022",
       description:
-        "Diseño y desarrollo de interfaces de usuario para sitios web y aplicaciones móviles. Implementación de diseños responsivos y optimización de rendimiento.",
-      image: "/static/media/banner.45fa4a290b461f9ea629.png",
+        "UI design and development for websites and mobile apps. Responsive layouts and performance optimization.",
     },
     {
       id: 3,
-      position: "Practicante de Desarrollo",
-      company: "Startup Local",
+      position: "Development Intern",
+      company: "Local Startup",
       location: "Torreón, Coahuila",
       period: "2019 - 2020",
       description:
-        "Asistencia en el desarrollo de aplicaciones web y móviles. Participación en todas las etapas del ciclo de vida del desarrollo de software.",
-      image: "/static/media/luzac.60b1460c8acaca670e11.jpeg",
+        "Supporting web and mobile development across the full software development lifecycle.",
     },
   ]
 
   const achievements = [
     {
       id: 1,
-      title: "Primer Lugar en Hackathon Regional",
+      title: "1st Place — Regional Hackathon",
       organization: "TecLaguna",
       year: "2021",
-      description: "Desarrollo de una solución innovadora para problemas de movilidad urbana.",
-      image: "/static/media/oro.4322873c1c58a138254e.jpeg",
+      description: "Built an innovative solution for urban mobility challenges.",
     },
     {
       id: 2,
-      title: "Certificación en Desarrollo Web",
+      title: "Web Development Certification",
       organization: "freeCodeCamp",
       year: "2020",
-      description: "Completé la certificación de Responsive Web Design y JavaScript Algorithms and Data Structures.",
-      image: "/static/media/medalla.69686c825813d98523fd.jpeg",
+      description: "Completed Responsive Web Design and JavaScript Algorithms & Data Structures certifications.",
     },
     {
       id: 3,
-      title: "Participación en Coding Cup",
+      title: "Coding Cup Participation",
       organization: "Coding Cup México",
       year: "2019",
-      description: "Participé en la competencia nacional de programación, alcanzando las semifinales.",
-      image: "/static/media/codingcup.518b46239e5424344cd0.jpeg",
+      description: "Competed nationally in programming and reached the semifinals.",
     },
   ]
 
@@ -100,11 +84,11 @@ export function Journey() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Mi <span className="text-blue-600">Trayectoria</span>
+            My <span className="text-blue-600">Journey</span>
           </h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto mb-8 rounded-full"></div>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Un vistazo a mi formación académica, experiencia profesional y logros a lo largo de mi carrera.
+            Education, professional experience, and highlights along the way.
           </p>
         </motion.div>
 
@@ -119,7 +103,7 @@ export function Journey() {
               <div className="p-3 rounded-full bg-primary/10 mr-4">
                 <GraduationCap className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="text-2xl font-semibold">Educación</h3>
+              <h3 className="text-2xl font-semibold">Education</h3>
             </div>
 
             <div className="space-y-6">
@@ -132,26 +116,15 @@ export function Journey() {
                 >
                   <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 card-hover">
                     <CardContent className="p-6">
-                      <div className="flex items-center mb-4">
-                        <div className="w-12 h-12 rounded-full overflow-hidden mr-4 border border-border">
-                          <img
-                            src={item.image || "/placeholder.svg"}
-                            alt={item.institution}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        <div>
-                          <h4 className="font-semibold">{item.degree}</h4>
-                          <p className="text-sm text-muted-foreground">{item.institution}</p>
-                        </div>
-                      </div>
-                      <div className="space-y-2">
+                      <h4 className="font-semibold text-lg">{item.degree}</h4>
+                      <p className="text-sm text-muted-foreground mt-1">{item.institution}</p>
+                      <div className="space-y-2 mt-4">
                         <div className="flex items-center text-sm text-muted-foreground">
-                          <Calendar className="h-4 w-4 mr-2" />
+                          <Calendar className="h-4 w-4 mr-2 shrink-0" />
                           <span>{item.period}</span>
                         </div>
                         <div className="flex items-center text-sm text-muted-foreground">
-                          <MapPin className="h-4 w-4 mr-2" />
+                          <MapPin className="h-4 w-4 mr-2 shrink-0" />
                           <span>{item.location}</span>
                         </div>
                         <p className="text-sm mt-2">{item.description}</p>
@@ -173,7 +146,7 @@ export function Journey() {
               <div className="p-3 rounded-full bg-primary/10 mr-4">
                 <Briefcase className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="text-2xl font-semibold">Experiencia</h3>
+              <h3 className="text-2xl font-semibold">Experience</h3>
             </div>
 
             <div className="space-y-6">
@@ -186,26 +159,15 @@ export function Journey() {
                 >
                   <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 card-hover">
                     <CardContent className="p-6">
-                      <div className="flex items-center mb-4">
-                        <div className="w-12 h-12 rounded-full overflow-hidden mr-4 border border-border">
-                          <img
-                            src={item.image || "/placeholder.svg"}
-                            alt={item.company}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        <div>
-                          <h4 className="font-semibold">{item.position}</h4>
-                          <p className="text-sm text-muted-foreground">{item.company}</p>
-                        </div>
-                      </div>
-                      <div className="space-y-2">
+                      <h4 className="font-semibold text-lg">{item.position}</h4>
+                      <p className="text-sm text-muted-foreground mt-1">{item.company}</p>
+                      <div className="space-y-2 mt-4">
                         <div className="flex items-center text-sm text-muted-foreground">
-                          <Calendar className="h-4 w-4 mr-2" />
+                          <Calendar className="h-4 w-4 mr-2 shrink-0" />
                           <span>{item.period}</span>
                         </div>
                         <div className="flex items-center text-sm text-muted-foreground">
-                          <MapPin className="h-4 w-4 mr-2" />
+                          <MapPin className="h-4 w-4 mr-2 shrink-0" />
                           <span>{item.location}</span>
                         </div>
                         <p className="text-sm mt-2">{item.description}</p>
@@ -227,7 +189,7 @@ export function Journey() {
               <div className="p-3 rounded-full bg-primary/10 mr-4">
                 <Award className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="text-2xl font-semibold">Logros</h3>
+              <h3 className="text-2xl font-semibold">Achievements</h3>
             </div>
 
             <div className="space-y-6">
@@ -240,22 +202,11 @@ export function Journey() {
                 >
                   <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 card-hover">
                     <CardContent className="p-6">
-                      <div className="flex items-center mb-4">
-                        <div className="w-12 h-12 rounded-full overflow-hidden mr-4 border border-border">
-                          <img
-                            src={item.image || "/placeholder.svg"}
-                            alt={item.title}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        <div>
-                          <h4 className="font-semibold">{item.title}</h4>
-                          <p className="text-sm text-muted-foreground">{item.organization}</p>
-                        </div>
-                      </div>
-                      <div className="space-y-2">
+                      <h4 className="font-semibold text-lg">{item.title}</h4>
+                      <p className="text-sm text-muted-foreground mt-1">{item.organization}</p>
+                      <div className="space-y-2 mt-4">
                         <div className="flex items-center text-sm text-muted-foreground">
-                          <Calendar className="h-4 w-4 mr-2" />
+                          <Calendar className="h-4 w-4 mr-2 shrink-0" />
                           <span>{item.year}</span>
                         </div>
                         <p className="text-sm mt-2">{item.description}</p>

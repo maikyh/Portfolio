@@ -7,6 +7,8 @@ import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 
+const resumeHref = `/media/${encodeURIComponent("Miguel Garza Resume.03ff9458d2d06f53b99e.pdf")}`
+
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -21,12 +23,12 @@ export function Header() {
   }, [])
 
   const navItems = [
-    { name: "Inicio", href: "#hero" },
-    { name: "Sobre mí", href: "#about" },
-    { name: "Habilidades", href: "#skills" },
-    { name: "Proyectos", href: "#projects" },
-    { name: "Trayectoria", href: "#journey" },
-    { name: "Contacto", href: "#contact" },
+    { name: "Home", href: "#hero" },
+    { name: "About", href: "#about" },
+    { name: "Skills", href: "#skills" },
+    { name: "Projects", href: "#projects" },
+    { name: "Journey", href: "#journey" },
+    { name: "Contact", href: "#contact" },
   ]
 
   return (
@@ -75,12 +77,8 @@ export function Header() {
             transition={{ duration: 0.5, delay: 0.6 }}
           >
             <Button className="bg-primary hover:bg-primary/90 transition-all duration-300">
-              <a
-                href="/static/media/Miguel Garza Resume.03ff9458d2d06f53b99e.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Descargar CV
+              <a href={resumeHref} target="_blank" rel="noopener noreferrer">
+                Download CV
               </a>
             </Button>
           </motion.div>
@@ -119,13 +117,8 @@ export function Header() {
                 ))}
                 <li>
                   <Button className="w-full mt-2 bg-primary hover:bg-primary/90">
-                    <a
-                      href="/static/media/Miguel Garza Resume.03ff9458d2d06f53b99e.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      Descargar CV
+                    <a href={resumeHref} target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>
+                      Download CV
                     </a>
                   </Button>
                 </li>

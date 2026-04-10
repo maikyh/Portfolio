@@ -19,7 +19,7 @@ export function Hero() {
           >
             <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary glow mx-auto">
               <img
-                src="/static/media/me.f9163fe9b6fb4140c4aa.jpeg"
+                src="/media/me.f9163fe9b6fb4140c4aa.jpeg"
                 alt="Miguel Garza"
                 className="w-full h-full object-cover"
               />
@@ -32,7 +32,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-4xl md:text-6xl font-bold mb-4"
           >
-            Hola, soy <span className="text-gradient font-extrabold">Miguel Garza</span>
+            Hi, I&apos;m <span className="text-gradient font-extrabold">Miguel Garza</span>
           </motion.h1>
 
           <motion.div
@@ -43,13 +43,13 @@ export function Hero() {
           >
             <TypeAnimation
               sequence={[
-                "Desarrollador Web",
+                "Web Developer",
                 1000,
-                "Ingeniero de Software",
+                "Software Engineer",
                 1000,
-                "Diseñador UI/UX",
+                "UI/UX Designer",
                 1000,
-                "Entusiasta de la Tecnología",
+                "Technology Enthusiast",
                 1000,
               ]}
               wrapper="span"
@@ -68,14 +68,14 @@ export function Hero() {
               size="lg"
               className="bg-blue-600 hover:bg-blue-500 text-white hover-glow transition-all duration-300"
             >
-              <Link href="#contact">Contáctame</Link>
+              <Link href="#contact">Contact me</Link>
             </Button>
             <Button
               variant="outline"
               size="lg"
-              className="border-blue-600 text-blue-600 hover:bg-blue-50 transition-all duration-300"
+              className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-all duration-300"
             >
-              <Link href="#projects">Ver Proyectos</Link>
+              <Link href="#projects">View projects</Link>
             </Button>
           </motion.div>
 
