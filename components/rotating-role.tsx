@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { cn } from "@/lib/utils"
 
 // Every role sits in the same grid cell, so the slot is always as tall and wide as the
-// longest role: words can cross-fade but never overlap the lines around them.
+// longest role and never pushes into the lines around it.
 export function RotatingRole({ roles, className }: { roles: string[]; className?: string }) {
   const [index, setIndex] = useState(0)
 
@@ -22,8 +22,11 @@ export function RotatingRole({ roles, className }: { roles: string[]; className?
           key={role}
           aria-hidden="true"
           className={cn(
-            "col-start-1 row-start-1 transition-[opacity,transform] duration-500 ease-out",
-            i === index ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0",
+            "col-start-1 row-start-1 transition-[opacity,transform] ease-out",
+            // The outgoing role is gone before the next one appears, so the two never show at once.
+            i === index
+              ? "translate-y-0 opacity-100 duration-300 delay-200"
+              : "-translate-y-2 opacity-0 duration-200",
           )}
         >
           {role}
