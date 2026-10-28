@@ -17,7 +17,6 @@ export const intro =
 
 export const stats = [
   { value: "3×", label: "Meta SWE internships" },
-  { value: "2B+", label: "events per minute at Media Metrics" },
   { value: "100+", label: "students mentored in algorithms" },
   { value: "6", label: "teams coached to ICPC Mexico Finals" },
 ]
