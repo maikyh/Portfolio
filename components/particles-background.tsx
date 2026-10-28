@@ -1,132 +1,58 @@
 "use client"
 
-import { useCallback, useEffect, useState } from "react"
+import { useCallback, useEffect, useMemo, useState } from "react"
 import Particles from "react-tsparticles"
-import { loadFull } from "tsparticles"
+import { loadSlim } from "tsparticles-slim"
 import { useTheme } from "next-themes"
-import type { Engine } from "tsparticles-engine"
+import type { Engine, ISourceOptions } from "tsparticles-engine"
 
 export function ParticlesBackground() {
-  const { theme } = useTheme()
+  const { resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
+  const [reduceMotion, setReduceMotion] = useState(false)
 
   useEffect(() => {
     setMounted(true)
+    setReduceMotion(window.matchMedia("(prefers-reduced-motion: reduce)").matches)
   }, [])
 
   const particlesInit = useCallback(async (engine: Engine) => {
-    await loadFull(engine)
+    await loadSlim(engine)
   }, [])
+
+  const isDark = resolvedTheme === "dark"
+
+  const options = useMemo<ISourceOptions>(() => {
+    const color = isDark ? "#6b84ff" : "#0000ff"
+    return {
+      fullScreen: { enable: false },
+      fpsLimit: 60,
+      detectRetina: true,
+      particles: {
+        number: { value: 55, density: { enable: true, area: 900 } },
+        color: { value: color },
+        opacity: { value: { min: 0.12, max: isDark ? 0.4 : 0.3 } },
+        size: { value: { min: 1, max: 2.6 } },
+        links: { enable: true, distance: 140, color, opacity: isDark ? 0.18 : 0.12, width: 1 },
+        move: { enable: !reduceMotion, speed: 0.6, outModes: { default: "out" } },
+      },
+      interactivity: {
+        detectsOn: "window",
+        events: { onHover: { enable: !reduceMotion, mode: "grab" }, resize: true },
+        modes: { grab: { distance: 150, links: { opacity: 0.35 } } },
+      },
+    }
+  }, [isDark, reduceMotion])
 
   if (!mounted) return null
 
-  const isDarkTheme = theme === "dark"
-
-  const particlesConfig = {
-    particles: {
-      number: {
-        value: 80,
-        density: {
-          enable: true,
-          value_area: 800,
-        },
-      },
-      color: {
-        value: isDarkTheme ? "#3b82f6" : "#2563eb",
-      },
-      shape: {
-        type: "circle",
-        stroke: {
-          width: 0,
-          color: "#000000",
-        },
-        polygon: {
-          nb_sides: 5,
-        },
-      },
-      opacity: {
-        value: isDarkTheme ? 0.3 : 0.2,
-        random: true,
-        anim: {
-          enable: true,
-          speed: 1,
-          opacity_min: 0.1,
-          sync: false,
-        },
-      },
-      size: {
-        value: 3,
-        random: true,
-        anim: {
-          enable: true,
-          speed: 2,
-          size_min: 0.1,
-          sync: false,
-        },
-      },
-      line_linked: {
-        enable: true,
-        distance: 150,
-        color: isDarkTheme ? "#3b82f6" : "#2563eb",
-        opacity: isDarkTheme ? 0.2 : 0.15,
-        width: 1,
-      },
-      move: {
-        enable: true,
-        speed: 1,
-        direction: "none",
-        random: true,
-        straight: false,
-        out_mode: "out",
-        bounce: false,
-        attract: {
-          enable: false,
-          rotateX: 600,
-          rotateY: 1200,
-        },
-      },
-    },
-    interactivity: {
-      detect_on: "canvas",
-      events: {
-        onhover: {
-          enable: true,
-          mode: "grab",
-        },
-        onclick: {
-          enable: true,
-          mode: "push",
-        },
-        resize: true,
-      },
-      modes: {
-        grab: {
-          distance: 140,
-          line_linked: {
-            opacity: 0.5,
-          },
-        },
-        bubble: {
-          distance: 400,
-          size: 40,
-          duration: 2,
-          opacity: 0.8,
-          speed: 3,
-        },
-        repulse: {
-          distance: 200,
-          duration: 0.4,
-        },
-        push: {
-          particles_nb: 4,
-        },
-        remove: {
-          particles_nb: 2,
-        },
-      },
-    },
-    retina_detect: true,
-  }
-
-  return <Particles id="tsparticles" init={particlesInit} options={particlesConfig} className="absolute inset-0 z-0" />
+  return (
+    <Particles
+      id="tsparticles"
+      init={particlesInit}
+      options={options}
+      className="pointer-events-none fixed inset-0 z-0"
+      aria-hidden="true"
+    />
+  )
 }

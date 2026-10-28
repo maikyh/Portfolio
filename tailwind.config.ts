@@ -6,17 +6,20 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "*.{js,ts,jsx,tsx,mdx}",
+    "./lib/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: { DEFAULT: "1.25rem", sm: "1.5rem" },
       screens: {
-        "2xl": "1400px",
+        "2xl": "1168px",
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -46,6 +49,10 @@ const config: Config = {
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
+        },
+        band: {
+          DEFAULT: "hsl(var(--band))",
+          foreground: "hsl(var(--band-foreground))",
         },
         card: {
           DEFAULT: "hsl(var(--card))",
