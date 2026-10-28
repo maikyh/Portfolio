@@ -6,6 +6,8 @@ export const site = {
   email: "miguelgrza.12@gmail.com",
   github: "https://github.com/maikyh",
   linkedin: "https://www.linkedin.com/in/maiky/",
+  // Copy of the CV with the phone number removed. Plain links don't get basePath, so it's spelled out.
+  resume: "/miguel-garza/media/Miguel-Garza-Resume.pdf",
   // Flip to true once the full-time offer is confirmed publicly.
   showIncomingMeta: false,
 }

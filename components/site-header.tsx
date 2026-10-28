@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
-import { Menu, X } from "lucide-react"
-import { nav } from "@/lib/content"
+import { FileDown, Menu, X } from "lucide-react"
+import { nav, site } from "@/lib/content"
 import { cn } from "@/lib/utils"
 import { ThemeToggle } from "@/components/theme-toggle"
 
@@ -30,7 +30,7 @@ export function SiteHeader() {
           Miguel Garza
         </a>
 
-        <nav aria-label="Main" className="ml-auto hidden md:block">
+        <nav aria-label="Main" className="ml-auto hidden lg:block">
           <ul className="flex gap-1">
             {nav.map((item) => (
               <li key={item.href}>
@@ -45,12 +45,21 @@ export function SiteHeader() {
           </ul>
         </nav>
 
-        <div className="ml-auto flex items-center gap-2 md:ml-0">
+        <div className="ml-auto flex items-center gap-2 lg:ml-0">
           <ThemeToggle />
+          <a
+            href={site.resume}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary hidden rounded-[10px] px-4 py-2.5 text-sm lg:inline-flex"
+          >
+            <FileDown className="h-4 w-4" aria-hidden="true" />
+            Résumé
+          </a>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="grid h-10 w-10 place-items-center rounded-xl border border-border bg-background md:hidden"
+            className="grid h-10 w-10 place-items-center rounded-xl border border-border bg-background lg:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             aria-controls="mobile-nav"
@@ -69,7 +78,7 @@ export function SiteHeader() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="overflow-hidden md:hidden"
+            className="overflow-hidden lg:hidden"
           >
             <ul className="container grid gap-1 pb-4">
               {nav.map((item) => (
@@ -83,6 +92,18 @@ export function SiteHeader() {
                   </a>
                 </li>
               ))}
+              <li>
+                <a
+                  href={site.resume}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                  className="btn-primary mt-2 w-full"
+                >
+                  <FileDown className="h-4 w-4" aria-hidden="true" />
+                  Résumé
+                </a>
+              </li>
             </ul>
           </motion.nav>
         )}
